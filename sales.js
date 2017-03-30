@@ -1,5 +1,15 @@
 var runningTotal = 0.0;
 
+function calculateReceipt()
+{
+  var receiptSubtotal = Number(getCookie("preTax"));
+  var receiptTax = receiptSubtotal * .075;
+  var receiptTotal = receiptSubtotal + receiptTax;
+  document.getElementById("sub").innerHTML = asCurrency(receiptSubtotal);
+  document.getElementById("tax").innerHTML = asCurrency(receiptTax);
+  document.getElementById("tot").innerHTML = asCurrency(receiptTotal);
+}
+
 function addItem()
 {
   var newItem;
