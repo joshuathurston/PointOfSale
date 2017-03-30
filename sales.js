@@ -10,7 +10,12 @@ function addItem()
   }
   else
   {
-    
+    newItem = Number(newItem);
+    runningTotal += newItem;
+    var dollars = asCurrency(Number(runningTotal));
+    document.getElementById("subtotal").innerHTML = dollars;
+    document.getElementById("price").value = "";
+    setCookie("preTax", runningTotal, 1);
   }
   //IF newItem is not a number
   // THEN show an alert: "Enter price as a number"
